@@ -1,15 +1,14 @@
-create() {
+create(); {
 this.courseKeys = this.InputDeviceInfo.keyboard.createCursorKeys();//للكيبورد
 
 
 var KeyW = scene.input.Keyboard.addKey("w");
-var KeyW = scene.input.Keyboard.addKey("D");
-var KeyW = scene.input.Keyboard.addKey("A");
-var KeyW = scene.input.Keyboard.addKey("S");
-
+var KeyD = scene.input.Keyboard.addKey("D");
+var KeyA = scene.input.Keyboard.addKey("A");
+var KeyS = scene.input.Keyboard.addKey("S");
 }
 
-update() {
+update(); {
 var pointer =this.InputDeviceInfo.activePointer;
 if(pointer.isDown){ //للماوس
 var touchX = pointer.x;
