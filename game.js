@@ -1,7 +1,3 @@
-window.onload = function() {
-    var game = new Phaser.Game();
-}
-
 create(); {
 this.courseKeys = this.InputDeviceInfo.keyboard.createCursorKeys();//للكيبورد
 
