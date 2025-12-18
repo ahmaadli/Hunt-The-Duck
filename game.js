@@ -1,4 +1,8 @@
-create() {
+window.onload = function() {
+    var game = new Phaser.Game();
+}
+
+create(); {
 this.courseKeys = this.InputDeviceInfo.keyboard.createCursorKeys();//للكيبورد
 
 
@@ -15,7 +19,7 @@ var KeyW = scene.input.Keyboard.addKey("S");
 
 
 
-update() {
+update(); {
 var pointer =this.InputDeviceInfo.activePointer;
 if(pointer.isDown){ //للماوس
 var touchX = pointer.x;
