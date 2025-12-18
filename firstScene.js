@@ -4,7 +4,7 @@ class FirstScene extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image("background", "image.png");
+        this.load.image("background", "Background.png");
         this.load.image("duck", "assets/duck.png");
         this.load.image("crosshair", "assets/crosshair.png");
     }//حقت الصور 
@@ -26,3 +26,4 @@ class FirstScene extends Phaser.Scene {
         }
     }//متى اتحرك من المشهد الاول الى
 }
+
