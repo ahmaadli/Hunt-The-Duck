@@ -1,3 +1,15 @@
+window.onload = function() {
+    var config = {
+        width: 900,
+        height: 600,
+        type: Phaser.AUTO,
+        transparent: true,
+        backgroundColor: '#ff0000ff',
+        scene: [FirstScene]
+    }
+    var HuntTheDuck = new Phaser.Game(config);
+}
+
 create(); {
 this.courseKeys = this.InputDeviceInfo.keyboard.createCursorKeys();//للكيبورد
 
