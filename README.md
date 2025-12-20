@@ -5,8 +5,8 @@ To play the game you can download it ZIP and just (go live) with it using VScode
 
 + --------------------------RULES----------------------------------
 + You only have 30 seconds. Try hard to get your best SCORE!!!
-+ Click on the ducks to knock them
-+ There are a bad luck Ducks, its gonna be darker. BECAREFUL
++ Click on the ducks and knock them to get +10 SCORES
++ The Bad luck Ducks, its gonna be darker. -10 SCORES
 + --------------------------RULES----------------------------------
 
 ENJOY PLAYING !!!
