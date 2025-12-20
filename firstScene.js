@@ -1,4 +1,5 @@
 class FirstScene extends Phaser.Scene {
+class FirstScene extends Phaser.Scene {
     constructor() {
         super("FirstScene");
         this.score = 0;
@@ -12,6 +13,8 @@ class FirstScene extends Phaser.Scene {
         this.load.image("background", "Background.png");
         this.load.image("crosshair", "crosshair.png");
         this.load.spritesheet("animDuck", "animationDuck.png", { frameWidth: 280, frameHeight: 200 });
+        this.load.audio("shootSound", "shootSound.mp3");
+        this.load.audio("DuckQuack", "duckQuack.mp3");
     }
 
     create() {
@@ -49,12 +52,39 @@ class FirstScene extends Phaser.Scene {
             repeat: this.initialTime - 1
         });
 
+        // صوت البطة
+        this.duckHitCooldown = false;
+
+         this.duckSound = this.sound.add("DuckQuack", {
+               volume: 0.5
+         });
+
+
+
+         // إعداد صوت البطة عند النقر
+         this.playDuckHitSound = () => {
+            if (this.duckHitCooldown) return;
+
+             this.duckHitCooldown = true;
+             this.duckSound.play();
+
+             this.time.delayedCall(120, () => {
+             this.duckHitCooldown = false;
+              });
+            };
+
+        
+
         // 4. دالة إعداد النقر للبط العادي
         const setupDuck = (duck, pointsValue) => {
             duck.setInteractive();
             duck.isFalling = false;
             duck.on('pointerdown', () => {
                 if (this.gameOver || duck.isFalling) return;
+                
+                // صوت البطة
+                this.playDuckHitSound();
+
                 this.score += pointsValue;
                 this.scoreText.setText('Score: ' + this.score);
 
@@ -76,7 +106,7 @@ class FirstScene extends Phaser.Scene {
             duck.setScale(0.5);
             duck.setOrigin(0, 0);
             duck.flipX = true;
-            duck.currentSpeedX = 14;
+            duck.currentSpeedX = 20;
             duck.play("fly", true);
             setupDuck(duck, 10);
         }
@@ -90,7 +120,7 @@ class FirstScene extends Phaser.Scene {
             duck.setScale(0.5);
             duck.setOrigin(0, 0);
             duck.flipX = false;
-            duck.currentSpeedX = -14;
+            duck.currentSpeedX = -20;
             duck.play("fly", true);
             setupDuck(duck, 10);
         }
@@ -106,7 +136,7 @@ class FirstScene extends Phaser.Scene {
             duck.setScale(0.5);
             duck.setOrigin(0, 0);
             duck.flipX = false;
-            duck.currentSpeedX = -14;
+            duck.currentSpeedX = -20;
             duck.play("fly", true);
             setupDuck(duck, -10);
         }
@@ -115,6 +145,15 @@ class FirstScene extends Phaser.Scene {
 
         // اخفاء الماوس
         this.input.setDefaultCursor('none');
+
+        // صوت الطلقة
+        this.shootSound = this.sound.add("shootSound", { volume: 0.5 } ); 
+
+        // عند النقر تشغيل صوت الطلقة
+        this.input.on('pointerdown', () => {
+            if (!this.gameOver) {
+            this.shootSound.play();
+        }});
     }
 
     onTimerTick() {
@@ -228,4 +267,5 @@ class FirstScene extends Phaser.Scene {
         }
     }
 }
+
 
