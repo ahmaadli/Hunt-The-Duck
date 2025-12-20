@@ -10,8 +10,8 @@ class FirstScene extends Phaser.Scene {
     preload() {
         // --- تحميل الصور والملفات ---
         this.load.image("background", "Background.png");
-        this.load.image("crosshair", "assets/crosshair.png");
-        this.load.spritesheet("animDuck", "assets/animationDuck.png", { frameWidth: 280, frameHeight: 200 });
+        this.load.image("crosshair", "crosshair.png");
+        this.load.spritesheet("animDuck", "animationDuck.png", { frameWidth: 280, frameHeight: 200 });
     }
 
     create() {
@@ -228,3 +228,4 @@ class FirstScene extends Phaser.Scene {
         }
     }
 }
+
