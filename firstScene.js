@@ -1,4 +1,4 @@
-class FirstScene extends Phaser.Scene {
+
 class FirstScene extends Phaser.Scene {
     constructor() {
         super("FirstScene");
@@ -106,8 +106,8 @@ class FirstScene extends Phaser.Scene {
             duck.setScale(0.5);
             duck.setOrigin(0, 0);
             duck.flipX = true;
-            duck.currentSpeedX = 20;
-            duck.play("fly", true);
+            duck.currentSpeedX = 14;
+            duck.play("fly", true); 
             setupDuck(duck, 10);
         }
 
@@ -120,7 +120,7 @@ class FirstScene extends Phaser.Scene {
             duck.setScale(0.5);
             duck.setOrigin(0, 0);
             duck.flipX = false;
-            duck.currentSpeedX = -20;
+            duck.currentSpeedX = -14;
             duck.play("fly", true);
             setupDuck(duck, 10);
         }
@@ -137,7 +137,7 @@ class FirstScene extends Phaser.Scene {
             duck.setOrigin(0, 0);
             duck.flipX = false;
             duck.currentSpeedX = -20;
-            duck.play("fly", true);
+            duck.play("fly", true); 
             setupDuck(duck, -10);
         }
         // الكروس هير
@@ -252,7 +252,7 @@ class FirstScene extends Phaser.Scene {
                         duckSprite.setVelocity(0, 0);
                         duckSprite.clearTint();
                         duckSprite.setTint(0x808080);
-                        duckSprite.currentSpeedX = -14;
+                        duckSprite.currentSpeedX = -20;
                         duckSprite.x = this.scale.width + 150;
                         duckSprite.y = Phaser.Math.Between(50, 450);
                         duckSprite.play("fly", true);
@@ -267,5 +267,3 @@ class FirstScene extends Phaser.Scene {
         }
     }
 }
-
-
