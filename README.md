@@ -7,6 +7,6 @@ To play the game you can download it ZIP and just (go live) with it using VScode
 + You only have 30 seconds. Try hard to get your best SCORE!!!
 + Click on the ducks to knock them
 + There are a bad luck Ducks, its gonna be darker. BECAREFUL
-+ + --------------------------RULES----------------------------------
++ --------------------------RULES----------------------------------
 
 ENJOY PLAYING !!!
